@@ -24,6 +24,7 @@ import {
   Layers
 } from 'lucide-react';
 
+
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -72,7 +73,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Nav */}
-      <nav className="fixed w-full z-50 bg-white/80 backdrop-blur-lg">
+      <nav className="fixed w-full z-50 bg-white/10 backdrop-blur-lg border-b-2 border-white border-opacity-10">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <a href="#home" className="text-2xl font-bold text-gray-800">
@@ -128,7 +129,7 @@ function App() {
       </nav>
 
       {/* Hero */}
-      <header id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white overflow-hidden pt-16">
+      <header id="home" className="relative min-h-[calc(100vh+5rem)] flex items-center justify-center bg-gradient-to-br from-slate-900 via-blue-100 to-slate-900 text-white overflow-hidden pt-16">
 
         {/* Elementos del Background */}
         <div className="absolute inset-0 overflow-hidden">
@@ -150,11 +151,11 @@ function App() {
           <div className="space-y-8">
             <div className="relative inline-block">
               <div className="absolute inset-0 bg-gradient-to-r from-orange-500 to-blue-500 blur-xl opacity-30"></div>
-              <h1 className="relative text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-200 to-blue-200">
+              <h1 className="relative text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-orange-200 to-blue-800">
                 Innovación y eficiencia en soluciones para fundición y equipos industriales
               </h1>
             </div>
-            <p className="text-xl md:text-2xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-black max-w-3xl mx-auto leading-relaxed">
             En Fenixtech acercamos las mejores tecnologías y equipos industriales a tu alcance, garantizando calidad, reducción de costos y optimización en tus procesos.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
@@ -171,7 +172,7 @@ function App() {
               </button>
               <a
                 href="#specialties"
-                className="text-gray-200 hover:text-white transition-colors duration-300 flex items-center gap-2 group"
+                className="text-black hover:text-white transition-colors duration-300 flex items-center gap-2 group"
               >
                 Descubre más
                 <ChevronRight className="group-hover:translate-x-1 transition-transform" />
