@@ -77,7 +77,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <a href="#home" className="text-2xl font-bold text-gray-800">
-              FenixTech
+              <img src="../logo.png" className='w-40' alt="Logo" />
             </a>
             
             {/* Desktop */}
