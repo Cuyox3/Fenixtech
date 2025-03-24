@@ -415,7 +415,7 @@ function App() {
             </div>    
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} FenixTech. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} FenixTech. Todos los derechos reservados.  | Design by: Cuyox3</p>
           </div>
         </div>
       </footer>
