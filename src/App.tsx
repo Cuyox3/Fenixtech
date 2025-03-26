@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="min-h-screen bg-white">
       {/* Nav */}
-      <nav className="fixed w-full z-50 bg-white/10 backdrop-blur-lg border-b-2 border-white border-opacity-10">
+      <nav className="fixed w-full z-50 bg-white backdrop-blur-lg border-b-2 border-black border-opacity-30">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <a href="#home" className="text-2xl font-bold text-gray-800">
