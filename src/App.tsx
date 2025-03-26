@@ -24,23 +24,26 @@ import {
   Layers
 } from 'lucide-react';
 
-
 function App() {
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+    const name = form.elements.namedItem('name')?.value || '';
+    const phone = form.elements.namedItem('phone')?.value || '';
+    const email = form.elements.namedItem('email')?.value || '';
+    const message = form.elements.namedItem('message')?.value || '';
+
+    const mailtoLink = `mailto:artuciiz@cuyox3.com?subject=Nombre: ${encodeURIComponent(name)} - Email: ${encodeURIComponent(email)}&body=Teléfono: ${encodeURIComponent(phone)}%0D%0AMensaje: ${encodeURIComponent(message)}`;
+
+    window.location.href = mailtoLink;
+  }
+
   const [showContactForm, setShowContactForm] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log(formData);
-    setShowContactForm(false);
-  };
+  
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,6 +73,8 @@ function App() {
     { id: 'contact', label: 'Contacto' },
   ];
 
+  
+
   return (
     <div className="min-h-screen bg-white">
       {/* Nav */}
@@ -77,7 +82,7 @@ function App() {
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex justify-between items-center h-16">
             <a href="#home" className="text-2xl font-bold text-gray-800">
-              <img src="../logo.png" className='w-40' alt="Logo" />
+              <img src="./logo.png" className='w-40' alt="Logo" />
             </a>
             
             {/* Desktop */}
@@ -410,7 +415,7 @@ function App() {
             </div>    
           </div>
           <div className="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
-            <p>&copy; {new Date().getFullYear()} FenixTech. Todos los derechos reservados.</p>
+            <p>&copy; {new Date().getFullYear()} FenixTech. Todos los derechos reservados.  | Design by: Cuyox3</p>
           </div>
         </div>
       </footer>
@@ -429,54 +434,51 @@ function App() {
             <p className="text-gray-600 mb-6">Cuéntanos sobre tu proyecto y nos pondremos en contacto contigo.</p>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label  htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
                   Nombre completo
                 </label>
                 <input
                   type="text"
+                  id = "name"
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
-                  value={formData.name}
-                  onChange={(e) => setFormData({...formData, name: e.target.value})}
                   placeholder="Ingresa tu nombre"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label  htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
                   Correo electrónico
                 </label>
                 <input
                   type="email"
+                  id = "email"
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
                   placeholder="tu@email.com"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label  htmlFor="telefono" className="block text-sm font-medium text-gray-700 mb-1">
                   Teléfono
                 </label>
                 <input
                   type="tel"
+                  id = "telefono"
                   required
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   placeholder="+1 (555) 000-0000"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
+                <label  htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
                   Mensaje
                 </label>
                 <textarea
+                  id = "message"
+                  name='message'
                   required
                   rows={4}
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300"
-                  value={formData.message}
-                  onChange={(e) => setFormData({...formData, message: e.target.value})}
                   placeholder="Cuéntanos sobre tu proyecto o necesidades..."
                 ></textarea>
               </div>
